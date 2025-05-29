@@ -8,9 +8,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6 d-flex align-items-center">
-                    <h1 class="m-0 mr-2">{{ $category->title }}</h1>
-                    <td><a href="{{ route('admin.categories.edit', $category->id) }}"><i class="text-success fas fa-solid fa-pen-nib"></i></a></td>
-                    <form action="{{ route('admin.categories.delete', $category->id) }}" method="POST">
+                    <h1 class="m-0 mr-2">{{ $tag->title }}</h1>
+                    <td><a href="{{ route('admin.tags.edit', $tag->id) }}"><i class="text-success fas fa-solid fa-pen-nib"></i></a></td>
+                    <form action="{{ route('admin.tags.delete', $tag->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="border-0 bg-transparent">
@@ -42,11 +42,11 @@
                                 <tbody>
                                 <tr>
                                     <td>ID</td>
-                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $tag->id }}</td>
                                 </tr>
                                 <tr>
                                     <td>Name</td>
-                                    <td>{{ $category->title }}</td>
+                                    <td>{{ $tag->title }}</td>
                                 </tr>
                                 </tbody>
                             </table>
