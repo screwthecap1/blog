@@ -16,6 +16,14 @@ use App\Http\Controllers\Admin\Tag\EditController as TagEditController;
 use App\Http\Controllers\Admin\Tag\UpdateController as TagUpdateController;
 use App\Http\Controllers\Admin\Tag\DeleteController as TagDeleteController;
 
+use App\Http\Controllers\Admin\Post\IndexController as PostIndexController;
+use App\Http\Controllers\Admin\Post\CreateController as PostCreateController;
+use App\Http\Controllers\Admin\Post\StoreController as PostStoreController;
+use App\Http\Controllers\Admin\Post\ShowController as PostShowController;
+use App\Http\Controllers\Admin\Post\EditController as PostEditController;
+use App\Http\Controllers\Admin\Post\UpdateController as PostUpdateController;
+use App\Http\Controllers\Admin\Post\DeleteController as PostDeleteController;
+
 use App\Http\Controllers\Admin\Main\IndexController as AdminIndexController;
 use App\Http\Controllers\Main\IndexController;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +52,16 @@ Route::prefix('admin')->group(function () {
         Route::patch('/{tag}', TagUpdateController::class)->name('update');
         Route::delete('/{tag}', TagDeleteController::class)->name('delete');
     });
+
+//    Route::prefix('posts')->name('admin.posts')->group(function () {
+//        Route::get('/', PostIndexController::class)->name('index');
+//        Route::get('/create', PostCreateController::class)->name('create');
+//        Route::post('/', PostStoreController::class)->name('store');
+//        Route::get('/{post}', PostShowController::class)->name('show');
+//        Route::get('{post}/edit', PostEditController::class)->name('edit');
+//        Route::patch('/{post}', PostUpdateController::class)->name('update');
+//        Route::delete('/{post}', PostDeleteController::class)->name('delete');
+//    });
 });
 
 Auth::routes();
