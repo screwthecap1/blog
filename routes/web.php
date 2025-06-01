@@ -53,15 +53,15 @@ Route::prefix('admin')->group(function () {
         Route::delete('/{tag}', TagDeleteController::class)->name('delete');
     });
 
-//    Route::prefix('posts')->name('admin.posts')->group(function () {
-//        Route::get('/', PostIndexController::class)->name('index');
-//        Route::get('/create', PostCreateController::class)->name('create');
-//        Route::post('/', PostStoreController::class)->name('store');
-//        Route::get('/{post}', PostShowController::class)->name('show');
-//        Route::get('{post}/edit', PostEditController::class)->name('edit');
-//        Route::patch('/{post}', PostUpdateController::class)->name('update');
-//        Route::delete('/{post}', PostDeleteController::class)->name('delete');
-//    });
+    Route::prefix('posts')->name('admin.posts.')->group(function () {
+        Route::get('/', PostIndexController::class)->name('index');
+        Route::get('/create', PostCreateController::class)->name('create');
+        Route::post('/', PostStoreController::class)->name('store');
+        Route::get('/{post}', PostShowController::class)->name('show');
+        Route::get('{post}/edit', PostEditController::class)->name('edit');
+        Route::patch('/{post}', PostUpdateController::class)->name('update');
+        Route::delete('/{post}', PostDeleteController::class)->name('delete');
+    });
 });
 
 Auth::routes();
