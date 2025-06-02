@@ -8,9 +8,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6 d-flex align-items-center">
-                    <h1 class="m-0 mr-2">{{ $posts->title }}</h1>
-                    <td><a href="{{ route('admin.posts.edit', $posts->id) }}"><i class="text-success fas fa-solid fa-pen-nib"></i></a></td>
-                    <form action="{{ route('admin.posts.delete', $posts->id) }}" method="POST">
+                    <h1 class="m-0 mr-2">{{ $post->title }}</h1>
+                    <td><a href="{{ route('admin.posts.edit', $post->id) }}"><i class="text-success fas fa-solid fa-pen-nib"></i></a></td>
+                    <form action="{{ route('admin.posts.delete', $post->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="border-0 bg-transparent">
@@ -42,11 +42,11 @@
                                 <tbody>
                                 <tr>
                                     <td>ID</td>
-                                    <td>{{ $posts->id }}</td>
+                                    <td>{{ $post->id }}</td>
                                 </tr>
                                 <tr>
                                     <td>Name</td>
-                                    <td>{{ $posts->title }}</td>
+                                    <td>{{ $post->title }}</td>
                                 </tr>
                                 </tbody>
                             </table>

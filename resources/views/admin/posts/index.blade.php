@@ -48,9 +48,9 @@
                                         <tr>
                                             <td>{{ $post->id }}</td>
                                             <td>{{ $post->title }}</td>
-                                            <td><a href="{{ route('admin.categories.show', $post->id) }}"><i
+                                            <td><a href="{{ route('admin.posts.show', $post->id) }}"><i
                                                         class="text-primary fas fa-solid fa-user"></i></a></td>
-                                            <td><a href="{{ route('admin.categories.edit', $post->id) }}"><i
+                                            <td><a href="{{ route('admin.posts.edit', $post->id) }}"><i
                                                         class="text-success fas fa-solid fa-pen-nib"></i></a></td>
                                             <td>
                                                 <form action="{{ route('admin.posts.delete', $post->id) }}" method="POST">
