@@ -53,6 +53,9 @@
                                         <span class="input-group-text">Upload</span>
                                     </div>
                                 </div>
+                                @error('main_image')
+                                <div class="text-danger">This field required for filling</div>
+                                @enderror
                             </div>
                             <div class="form-group w-50">
                                 <label for="exampleInputFile">Add preview image</label>
@@ -65,6 +68,19 @@
                                         <span class="input-group-text">Upload</span>
                                     </div>
                                 </div>
+                                @error('preview_image')
+                                <div class="text-danger">This field required for filling</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Choose the category</label>
+                                <select name="category_id" class="form-control w-50">
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}"
+                                        {{ $category->id  == old('category_id') ? ' selected' : '' }}
+                                        > {{ $category->title }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Add">
