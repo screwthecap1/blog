@@ -43,21 +43,6 @@
                                 @enderror
                             </div>
                             <div class="form-group w-50">
-                                <label for="exampleInputFile">Add main image</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="main_image">
-                                        <label class="custom-file-label">Choose file</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">Upload</span>
-                                    </div>
-                                </div>
-                                @error('main_image')
-                                <div class="text-danger">This field required for filling</div>
-                                @enderror
-                            </div>
-                            <div class="form-group w-50">
                                 <label for="exampleInputFile">Add preview image</label>
                                 <div class="input-group">
                                     <div class="custom-file">
@@ -72,6 +57,21 @@
                                 <div class="text-danger">This field required for filling</div>
                                 @enderror
                             </div>
+                            <div class="form-group w-50">
+                                <label for="exampleInputFile">Add main image</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="main_image">
+                                        <label class="custom-file-label">Choose file</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
+                                </div>
+                                @error('main_image')
+                                <div class="text-danger">This field required for filling</div>
+                                @enderror
+                            </div>
                             <div class="form-group">
                                 <label>Choose the category</label>
                                 <select name="category_id" class="form-control w-50">
@@ -82,9 +82,9 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>Multiple</label>
-                                <select class="select2" name="tag_ids[]" multiple="multiple" data-placeholder="Select a State"
+                            <div class="form-group w-50">
+                                <label>Choose the tag(s)</label>
+                                <select class="select2" name="tag_ids[]" multiple="multiple" data-placeholder="Select the Tag(s)"
                                         style="width: 100%;">
                                     @foreach($tags as $tag)
                                         <option {{ (is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids'))) ? 'selected' : '' }}

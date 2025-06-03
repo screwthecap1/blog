@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin\tag;
+namespace App\Http\Controllers\Admin\Tag;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Tag\StoreRequest;

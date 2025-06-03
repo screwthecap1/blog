@@ -37,10 +37,10 @@ Route::prefix('admin')->group(function () {
         Route::get('/', CategoryIndexController::class)->name('index');
         Route::get('/create', CategoryCreateController::class)->name('create');
         Route::post('/', CategoryStoreController::class)->name('store');
-        Route::get('/{categories}', CategoryShowController::class)->name('show');
-        Route::get('/{categories}/edit', CategoryEditController::class)->name('edit');
-        Route::patch('/{categories}', CategoryUpdateController::class)->name('update');
-        Route::delete('/{categories}', CategoryDeleteController::class)->name('delete');
+        Route::get('/{category}', CategoryShowController::class)->name('show');
+        Route::get('/{category}/edit', CategoryEditController::class)->name('edit');
+        Route::patch('/{category}', CategoryUpdateController::class)->name('update');
+        Route::delete('/{category}', CategoryDeleteController::class)->name('delete');
     });
 
     Route::prefix('tags')->name('admin.tags.')->group(function () {
