@@ -31,7 +31,7 @@
                             @csrf
                             <div class="form-group w-25">
                                 <input type="text" class="form-control" name="title" placeholder="Enter name of post"
-                                value = {{ old('title') }}>
+                                       value= {{ old('title') }}>
                                 @error('title')
                                 <div class="text-danger">This field required for filling</div>
                                 @enderror
@@ -77,8 +77,17 @@
                                 <select name="category_id" class="form-control w-50">
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}"
-                                        {{ $category->id  == old('category_id') ? ' selected' : '' }}
+                                            {{ $category->id  == old('category_id') ? ' selected' : '' }}
                                         > {{ $category->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Multiple</label>
+                                <select class="select2" name="tag_ids[]" multiple="multiple" data-placeholder="Select a State"
+                                        style="width: 100%;">
+                                    @foreach($tags as $tag)
+                                        <option value="{{ $tag->id }}">{{ $tag->title }}</option>
                                     @endforeach
                                 </select>
                             </div>

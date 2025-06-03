@@ -38,7 +38,7 @@
                                 <table class="table table-hover text-nowrap">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>№</th>
                                         <th>Name</th>
                                         <th colspan="3" class="text-center">Action</th>
                                     </tr>
@@ -46,7 +46,7 @@
                                     <tbody>
                                     @foreach($categories as $category)
                                         <tr>
-                                            <td>{{ $category->id }}</td>
+                                            <td>{{ $loop->iteration }}</td>
                                             <td>{{ $category->title }}</td>
                                             <td><a href="{{ route('admin.categories.show', $category->id) }}"><i
                                                         class="text-primary fas fa-solid fa-user"></i></a></td>
