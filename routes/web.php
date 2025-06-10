@@ -23,6 +23,15 @@ use App\Http\Controllers\Admin\Post\ShowController as PostShowController;
 use App\Http\Controllers\Admin\Post\EditController as PostEditController;
 use App\Http\Controllers\Admin\Post\UpdateController as PostUpdateController;
 use App\Http\Controllers\Admin\Post\DeleteController as PostDeleteController;
+
+//use App\Http\Controllers\Admin\User\IndexController as UserIndexController;
+//use App\Http\Controllers\Admin\User\CreateController as UserCreateController;
+//use App\Http\Controllers\Admin\User\StoreController as UserStoreController;
+//use App\Http\Controllers\Admin\User\ShowController as UserShowController;
+//use App\Http\Controllers\Admin\User\EditController as UserEditController;
+//use App\Http\Controllers\Admin\User\UpdateController as UserUpdateController;
+//use App\Http\Controllers\Admin\User\DeleteController as UserDeleteController;
+
 use App\Http\Controllers\Admin\Main\IndexController as AdminIndexController;
 use App\Http\Controllers\Main\IndexController;
 use Illuminate\Support\Facades\Route;
@@ -61,7 +70,25 @@ Route::prefix('admin')->group(function () {
         Route::patch('/{post}', PostUpdateController::class)->name('update');
         Route::delete('/{post}', PostDeleteController::class)->name('delete');
     });
+
+//    Route::prefix('users')->name('admin.users')->group(function () {
+//        Route::get('/', UserIndexController::class)->name('index');
+//        Route::get('/create', UserCreateController::class)->name('create');
+//        Route::post('/', UserStoreController::class)->name('store');
+//        Route::get('/{user}', UserShowController::class)->name('show');
+//        Route::get('/edit/{user}', UserEditController::class)->name('edit');
+//        Route::patch('/{user}', UserUpdateController::class)->name('update');
+//        Route::delete('/{user}', UserDeleteController::class)->name('delete');
+//    });
 });
+
+
+
+
+
+
+
+
 
 Auth::routes();
 
