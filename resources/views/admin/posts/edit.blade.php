@@ -40,7 +40,7 @@
                         <div class="form-group">
                             <textarea id="summernote" name="content"> {{ $post->content }} </textarea>
                             @error('content')
-                            <div class="text-danger">This field required for filling</div>
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group w-50">
@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                             @error('preview_image')
-                            <div class="text-danger">This field required for filling</div>
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group w-50">
@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                             @error('main_image')
-                            <div class="text-danger">This field required for filling</div>
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group">
@@ -88,6 +88,9 @@
                                     > {{ $category->title }}</option>
                                 @endforeach
                             </select>
+                            @error('category_id')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group w-50">
                             <label>Choose the tag(s)</label>
@@ -98,6 +101,9 @@
                                             value="{{ $tag->id }}">{{ $tag->title }}</option>
                                 @endforeach
                             </select>
+                            @error('tag_ids')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Add">
