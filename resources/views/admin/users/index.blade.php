@@ -47,13 +47,13 @@
                                     @foreach($users as $user)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $user->title }}</td>
-                                            <td><a href="{{ route('admin.categories.show', $user->id) }}"><i
+                                            <td>{{ $user->name }}</td>
+                                            <td><a href="{{ route('admin.users.show', $user->id) }}"><i
                                                         class="text-primary fas fa-solid fa-user"></i></a></td>
-                                            <td><a href="{{ route('admin.categories.edit', $user->id) }}"><i
+                                            <td><a href="{{ route('admin.users.edit', $user->id) }}"><i
                                                         class="text-success fas fa-solid fa-pen-nib"></i></a></td>
                                             <td>
-                                                <form action="{{ route('admin.categories.delete', $user->id) }}" method="POST">
+                                                <form action="{{ route('admin.users.delete', $user->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="border-0 bg-transparent">

@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6 d-flex align-items-center">
-                    <h1 class="m-0 mr-2">{{ $user->title }}</h1>
+                    <h1 class="m-0 mr-2">{{ $user->name }}</h1>
                     <td><a href="{{ route('admin.users.edit', $user->id) }}"><i class="text-success fas fa-solid fa-pen-nib"></i></a></td>
                     <form action="{{ route('admin.users.delete', $user->id) }}" method="POST">
                         @csrf
@@ -46,7 +46,7 @@
                                 </tr>
                                 <tr>
                                     <td>Name</td>
-                                    <td>{{ $user->title }}</td>
+                                    <td>{{ $user->name }}</td>
                                 </tr>
                                 </tbody>
                             </table>
