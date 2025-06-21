@@ -39,7 +39,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', IndexController::class);
 
 Route::prefix('admin')->middleware(['auth', 'admin', 'verified'])->group(function () {
-    Route::get('/', AdminIndexController::class);
+    Route::get('/', AdminIndexController::class)->name('admin.main.index');
 
     Route::prefix('categories')->name('admin.categories.')->group(function () {
         Route::get('/', CategoryIndexController::class)->name('index');

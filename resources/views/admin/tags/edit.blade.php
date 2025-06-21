@@ -12,8 +12,10 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Adding tag</li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Main</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.tags.index') }}">Tags</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.tags.index', $tag->id) }}">{{ $tag->title }}</a></li>
+                        <li class="breadcrumb-item active">Editing</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
