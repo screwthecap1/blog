@@ -6,13 +6,12 @@
 *.md diff=markdown
 *.php diff=php
 
-resources/js/* linguist-vendored
-public/js/* linguist-vendored
-public/css/* linguist-vendored
-node_modules/* linguist-vendored
+resources/js linguist-vendored
+public/js linguist-vendored
+public/css linguist-vendored
+node_modules linguist-vendored
 vite.config.js linguist-vendored
 package.json linguist-vendored
-
 
 /.github export-ignore
 CHANGELOG.md export-ignore
