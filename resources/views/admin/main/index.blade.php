@@ -61,7 +61,7 @@
                             <p>Categories</p>
                         </div>
                         <div class="icon">
-                            <i class="nav-icon fas fa-heart"></i>
+                            <i class="nav-icon fas fa-bookmark"></i>
                         </div>
                         <a href="{{ route('admin.categories.index') }}" class="small-box-footer">Details <i class="fas fa-arrow-circle-right"></i></a>
                     </div>

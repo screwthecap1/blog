@@ -33,10 +33,30 @@ use App\Http\Controllers\Admin\User\UpdateController as UserUpdateController;
 use App\Http\Controllers\Admin\User\DeleteController as UserDeleteController;
 
 use App\Http\Controllers\Admin\Main\IndexController as AdminIndexController;
+use App\Http\Controllers\Personal\Main\IndexController as PersonalIndexController;
+use App\Http\Controllers\Personal\Liked\IndexController as PersonalLikedController;
+use App\Http\Controllers\Personal\Comment\IndexController as PersonalCommentController;
 use App\Http\Controllers\Main\IndexController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', IndexController::class);
+
+Route::prefix('personal')->middleware(['auth', 'verified'])->name('personal.')->group(function () {
+    //Route::get('/', PersonalIndexController::class)->name('main.index');
+
+    Route::prefix('main')->name('main.')->group(function () {
+        Route::get('/', PersonalIndexController::class)->name('index');
+    });
+
+    Route::prefix('liked')->name('liked.')->group(function () {
+        Route::get('/', PersonalLikedController::class)->name('index');
+    });
+
+    Route::prefix('comment')->name('comment.')->group(function () {
+        Route::get('/', PersonalCommentController::class)->name('index');
+    });
+});
+
 
 Route::prefix('admin')->middleware(['auth', 'admin', 'verified'])->group(function () {
     Route::get('/', AdminIndexController::class)->name('admin.main.index');
