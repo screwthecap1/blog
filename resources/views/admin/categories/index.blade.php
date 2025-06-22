@@ -48,11 +48,11 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $category->title }}</td>
-                                            <td><a href="{{ route('admin.categories.show', $category->id) }}"><i
+                                            <td class="text-center"><a href="{{ route('admin.categories.show', $category->id) }}"><i
                                                         class="text-primary fas fa-solid fa-user"></i></a></td>
-                                            <td><a href="{{ route('admin.categories.edit', $category->id) }}"><i
+                                            <td class="text-center"><a href="{{ route('admin.categories.edit', $category->id) }}"><i
                                                         class="text-success fas fa-solid fa-pen-nib"></i></a></td>
-                                            <td>
+                                            <td class="text-center">
                                                 <form action="{{ route('admin.categories.delete', $category->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')

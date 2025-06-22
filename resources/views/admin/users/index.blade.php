@@ -48,12 +48,12 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $user->name }}</td>
-                                            <td><a href="{{ route('admin.users.show', $user->id) }}"><i
+                                            <td class="text-center"><a href="{{ route('admin.users.show', $user->id) }}"><i
                                                         class="text-primary fas fa-solid fa-user"></i></a></td>
-                                            <td><a href="{{ route('admin.users.edit', $user->id) }}"><i
+                                            <td class="text-center"><a href="{{ route('admin.users.edit', $user->id) }}"><i
                                                         class="text-success fas fa-solid fa-pen-nib"></i></a></td>
-                                            <td>
-                                                <form action="{{ route('admin.users.delete', $user->id) }}" method="POST">
+                                            <td class="text-center">
+                                                <form action="{{ route('admin.users.delete', $user->id) }}" method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="border-0 bg-transparent">

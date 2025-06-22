@@ -16,7 +16,7 @@
                 <a href="{{ route('personal.liked.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-heart"></i>
                     <p>
-                        Liked posts
+                        Liked Posts
                     </p>
                 </a>
             </li>

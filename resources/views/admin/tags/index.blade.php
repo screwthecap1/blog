@@ -48,11 +48,11 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $tag->title }}</td>
-                                            <td><a href="{{ route('admin.tags.show', $tag->id) }}"><i
+                                            <td class="text-center"><a href="{{ route('admin.tags.show', $tag->id) }}"><i
                                                         class="text-primary fas fa-solid fa-user"></i></a></td>
-                                            <td><a href="{{ route('admin.tags.edit', $tag->id) }}"><i
+                                            <td class="text-center"><a href="{{ route('admin.tags.edit', $tag->id) }}"><i
                                                         class="text-success fas fa-solid fa-pen-nib"></i></a></td>
-                                            <td>
+                                            <td class="text-center">
                                                 <form action="{{ route('admin.tags.delete', $tag->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
