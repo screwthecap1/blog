@@ -1,13 +1,25 @@
 *.php linguist-language=PHP
 *.blade.php linguist-language=PHP
+
 *.js linguist-vendored
 *.css linguist-vendored
+*.scss linguist-vendored
+*.html linguist-vendored
 *.json linguist-vendored
+*.lock linguist-vendored
+
 vite.config.js linguist-vendored
 webpack.mix.js linguist-vendored
 package.json linguist-vendored
+package-lock.json linguist-vendored
+yarn.lock linguist-vendored
+
 public/js/* linguist-vendored
 public/css/* linguist-vendored
 resources/js/* linguist-vendored
 resources/css/* linguist-vendored
 node_modules/* linguist-vendored
+
+/.github export-ignore
+CHANGELOG.md export-ignore
+.styleci.yml export-ignore
