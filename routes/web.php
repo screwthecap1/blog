@@ -43,7 +43,7 @@ use App\Http\Controllers\Personal\Comment\DeleteController as PersonalCommentDel
 use App\Http\Controllers\Main\IndexController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', IndexController::class);
+Route::get('/', IndexController::class)->name('main.index');
 
 Route::prefix('personal')->middleware(['auth', 'verified'])->name('personal.')->group(function () {
     Route::prefix('main')->name('main.')->group(function () {
