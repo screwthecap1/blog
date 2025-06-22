@@ -1,18 +1,13 @@
-* text=auto eol=lf
-
-*.blade.php diff=html
-*.css diff=css
-*.html diff=html
-*.md diff=markdown
-*.php diff=php
-
-resources/js linguist-vendored
-public/js linguist-vendored
-public/css linguist-vendored
-node_modules linguist-vendored
+*.php linguist-language=PHP
+*.blade.php linguist-language=PHP
+*.js linguist-vendored
+*.css linguist-vendored
+*.json linguist-vendored
 vite.config.js linguist-vendored
+webpack.mix.js linguist-vendored
 package.json linguist-vendored
-
-/.github export-ignore
-CHANGELOG.md export-ignore
-.styleci.yml export-ignore
+public/js/* linguist-vendored
+public/css/* linguist-vendored
+resources/js/* linguist-vendored
+resources/css/* linguist-vendored
+node_modules/* linguist-vendored
