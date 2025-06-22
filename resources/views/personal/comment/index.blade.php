@@ -24,7 +24,43 @@
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
-
+                <div class="col-6">
+                    <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Name</th>
+                                    <th colspan="2" class="text-center">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($comments as $comment)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $comment->message }}</td>
+                                        <td class="text-center"><a href="{{ route('personal.comment.edit', $comment->id) }}"><i
+                                                    class="text-success fas fa-solid fa-pen-nib"></i></a></td>
+                                        <td class="text-center">
+                                            <form action="{{ route('personal.comment.delete', $comment->id) }}"
+                                                  method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="border-0 bg-transparent">
+                                                    <i class="text-danger fas fa-solid fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
             </div>
             <!-- /.row -->
         </div><!-- /.container-fluid -->

@@ -37,6 +37,9 @@ use App\Http\Controllers\Personal\Main\IndexController as PersonalIndexControlle
 use App\Http\Controllers\Personal\Liked\IndexController as PersonalLikedController;
 use App\Http\Controllers\Personal\Liked\DeleteController as PersonalLikedDeleteController;
 use App\Http\Controllers\Personal\Comment\IndexController as PersonalCommentController;
+use App\Http\Controllers\Personal\Comment\EditController as PersonalCommentEditController;
+use App\Http\Controllers\Personal\Comment\UpdateController as PersonalCommentUpdateController;
+use App\Http\Controllers\Personal\Comment\DeleteController as PersonalCommentDeleteController;
 use App\Http\Controllers\Main\IndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +57,9 @@ Route::prefix('personal')->middleware(['auth', 'verified'])->name('personal.')->
 
     Route::prefix('comment')->name('comment.')->group(function () {
         Route::get('/', PersonalCommentController::class)->name('index');
+        Route::get('/{comment}/edit', PersonalCommentEditController::class)->name('edit');
+        Route::patch('/{comment}', PersonalCommentUpdateController::class)->name('update');
+        Route::delete('/{comment}', PersonalCommentDeleteController::class)->name('delete');
     });
 });
 

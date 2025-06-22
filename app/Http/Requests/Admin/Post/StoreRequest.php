@@ -44,8 +44,8 @@ class StoreRequest extends FormRequest
             'main_image.required' => 'This field is required for filling',
             'main_image.file' => 'Data must be associate with file type',
             'category_id.required' => 'This field is required for filling',
-            'category_id.string' => 'Id of Category must be integer type',
-            'category_id.exists' => 'Id of Category must be in DB',
+            'category_id.string' => 'Id of Comment must be integer type',
+            'category_id.exists' => 'Id of Comment must be in DB',
             'tag_ids.array' => 'It should be send as data array',
         ];
     }
