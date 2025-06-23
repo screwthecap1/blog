@@ -40,10 +40,20 @@ use App\Http\Controllers\Personal\Comment\IndexController as PersonalCommentCont
 use App\Http\Controllers\Personal\Comment\EditController as PersonalCommentEditController;
 use App\Http\Controllers\Personal\Comment\UpdateController as PersonalCommentUpdateController;
 use App\Http\Controllers\Personal\Comment\DeleteController as PersonalCommentDeleteController;
+
+use App\Http\Controllers\Post\IndexController as IndexControllerPost;
+use App\Http\Controllers\Post\ShowController as ShowControllerPost;
+
 use App\Http\Controllers\Main\IndexController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', IndexController::class)->name('main.index');
+
+Route::prefix('post')->name('post.')->group(function () {
+    Route::get('/', IndexControllerPost::class)->name('index');
+    Route::get('/{post}', ShowControllerPost::class)->name('show');
+});
+//Route::get('/', IndexController::class)->name('post.index');
 
 Route::prefix('personal')->middleware(['auth', 'verified'])->name('personal.')->group(function () {
     Route::prefix('main')->name('main.')->group(function () {
