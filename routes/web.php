@@ -44,6 +44,8 @@ use App\Http\Controllers\Personal\Comment\DeleteController as PersonalCommentDel
 use App\Http\Controllers\Post\IndexController as IndexControllerPost;
 use App\Http\Controllers\Post\ShowController as ShowControllerPost;
 
+use App\Http\Controllers\Post\Comment\StoreController as StoreControllerComment;
+
 use App\Http\Controllers\Main\IndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,6 +54,8 @@ Route::get('/', IndexController::class)->name('main.index');
 Route::prefix('post')->name('post.')->group(function () {
     Route::get('/', IndexControllerPost::class)->name('index');
     Route::get('/{post}', ShowControllerPost::class)->name('show');
+
+    Route::post('/{post}/comment', StoreControllerComment::class)->name('comment.store');
 });
 //Route::get('/', IndexController::class)->name('post.index');
 
