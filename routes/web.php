@@ -45,17 +45,26 @@ use App\Http\Controllers\Post\IndexController as IndexControllerPost;
 use App\Http\Controllers\Post\ShowController as ShowControllerPost;
 
 use App\Http\Controllers\Post\Comment\StoreController as StoreControllerComment;
+use App\Http\Controllers\Post\Like\StoreController as StoreControllerLike;
+use App\Http\Controllers\Category\IndexController as IndexControllerCat;
+use App\Http\Controllers\Category\Post\IndexController as IndexControllerCatPost;
 
 use App\Http\Controllers\Main\IndexController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', IndexController::class)->name('main.index');
 
+Route::get('/categories', IndexControllerCat::class)->name('category.index');
+Route::get('/{category}/posts', IndexControllerCatPost::class)->name('category.post.index');
+
+
 Route::prefix('post')->name('post.')->group(function () {
     Route::get('/', IndexControllerPost::class)->name('index');
     Route::get('/{post}', ShowControllerPost::class)->name('show');
 
     Route::post('/{post}/comment', StoreControllerComment::class)->name('comment.store');
+
+    Route::post('/{post}/likes', StoreControllerLike::class)->name('like.store');
 });
 //Route::get('/', IndexController::class)->name('post.index');
 

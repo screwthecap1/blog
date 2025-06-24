@@ -29,6 +29,9 @@
                         <a class="nav-link" href="{{ route('main.index') }}">Blog</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('category.index') }}">Category</a>
+                    </li>
+                    <li class="nav-item">
                         @auth()
                             <a class="nav-link" href="{{ route('personal.main.index') }}">Personal cabinet</a>
                         @endauth
